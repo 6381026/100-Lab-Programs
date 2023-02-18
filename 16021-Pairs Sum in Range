@@ -1,0 +1,50 @@
+The program must accept N integer values and print the count of pairs whose sum is from X to Y.
+Example Input/Output 1:
+Input:
+6
+10 25 30 50 60 100
+80 120
+Output:
+5
+Explanation:
+The pairs are (10 100), (25, 60), (30, 50), (30, 60), (50, 60)
+
+
+
+
+
+
+
+
+Code :
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d\n",&n);
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d ",&arr[i]);
+    }
+    
+    int x,y;
+    scanf("%d %d",&x,&y);
+    int cnt=0;
+    for(int i=0;i<n-1;i++)
+    {
+        int sum=0;
+        for(int j=i+1;j<n;j++)
+        {
+            sum=arr[i]+arr[j];
+            if(sum>=x && sum<=y)
+            {
+                cnt++;
+            }
+        }
+    }
+    printf("%d",cnt);
+}
