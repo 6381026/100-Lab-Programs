@@ -1,0 +1,46 @@
+The program must accept a string S with digits and X. The program must print the minimum possible
+digit value for X so that the resulting integer is divisible by 9.
+Example Input/Output 1:
+Input:
+12X6
+Output:
+0
+Example Input/Output 2:
+Input:
+12X7
+Output:
+8
+
+
+
+
+Code :
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char ch[100];
+    scanf("%s ",ch);
+    int n=strlen(ch);
+    int index=0;
+    for(int i=0;i<n;i++)
+    {
+        if(ch[i]=='X')
+        {   
+            index=i;            //finding the X character position
+            break;
+        }
+    }
+    for(char i='0';i<='9';i++)
+    {
+        ch[index]=i;
+        int res=atoi(ch);       //converting ch[100] string to integer
+        if(res%9==0)
+        {
+            printf("%c",i);
+            break;
+        }
+    }
+}
