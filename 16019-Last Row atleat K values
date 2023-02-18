@@ -1,1 +1,60 @@
+The program must accept an R*C character matrix and print the last row having atleast K vowels.
+Example Input/Output 1:
+Input:
+5 6
+a p p l e s
+o r a n g e
+m i r a g e
+l e v e o l
+m o t e l s
+3
+Output:
+l e v e o l
 
+
+
+
+
+
+Code :
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c;
+    scanf("%d %d\n",&r,&c);
+    char arr[r][c];
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%c ",&arr[i][j]);
+        }
+    }
+    
+    int x;
+    scanf("\n%d",&x);
+    
+    for(int i=r-1;i>=0;i--)
+    {
+        int cnt=0;
+        for(int j=0;j<c;j++)
+        {
+            char c=arr[i][j];
+            if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U')
+            {
+                cnt++;
+            }
+        }
+        if(cnt>=x)
+        {
+            for(int j=0;j<c;j++)
+            {
+                printf("%c ",arr[i][j]);
+            }
+            break;
+        }
+    }
+}
