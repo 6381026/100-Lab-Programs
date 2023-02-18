@@ -1,0 +1,43 @@
+The program must accept N integers and sort only the first K integers.
+Example Input/Output 1:
+Input:
+5
+654 20 51 1023 78
+3
+Output:
+20 51 654 1023 78
+
+
+
+Code :
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,x;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d ",&arr[i]);
+    }
+    scanf("%d",&x);
+    for(int i=0;i<x-1;i++)
+    {
+        for(int j=i+1;j<x;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
