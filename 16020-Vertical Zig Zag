@@ -1,0 +1,56 @@
+The program must accept an integer matrix of size R*C and print the values in a vertical zig-zag
+fashion.
+Example Input/Output 1:
+Input:
+4 5
+1 2 3 4 5
+6 5 0 1 2
+9 7 4 11 30
+9 8 7 60 4
+Output:
+1 6 9 9 8 7 5 2 3 0 4 7 60 11 1 4 5 2 30 4
+
+
+
+
+
+Code :
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c;
+    scanf("%d %d",&r,&c);
+    int arr[r][c];
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%d ",&arr[i][j]);
+        }
+    }
+    
+    int cnt=0;
+    for(int i=0;i<c;i++)
+    {
+        if(cnt==0)
+        {
+            for(int j=0;j<r;j++)
+            {
+                printf("%d ",arr[j][i]);
+            }
+            cnt++;
+        }
+        else
+        {
+            for(int j=r-1;j>=0;j--)
+            {
+                printf("%d ",arr[j][i]);
+            }
+            cnt=0;
+        }
+    }
+}
