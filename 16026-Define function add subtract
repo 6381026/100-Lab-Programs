@@ -1,0 +1,30 @@
+Please fill in the missing lines of code to define the functions add, subtract so that the program runs
+successfully.
+Example Input/Output 1:
+Input:
+100 50
+Output:
+150 50
+
+
+
+
+
+
+
+
+
+
+
+
+Code :
+
+int add(int x,int y)
+{
+    return x+y;
+}
+int subtract(int x,int y)
+{
+    return x-y;
+}
+
